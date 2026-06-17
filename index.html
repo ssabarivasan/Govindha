@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOVINDA — Scalp | 5M→1H Structural SL | 1.5% TP</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0E1230; --bg2:#12152E; --panel:#161B3C; --panel2:#1B2150;
+  --teal:#14B8C4; --violet:#7C5CFF; --gold:#E8B23A; --amber:#E8A33A;
+  --text:#E7ECFF; --text2:#8B93C4; --border:rgba(124,92,255,.22);
+  --green:#28D9A3; --cyan:#14B8C4; --neut:#8B93C4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%, #1a2050 0%, var(--bg) 55%);
+  color:var(--text);font-family:'Rajdhani',sans-serif;font-size:14px;padding:10px;max-width:760px;margin:0 auto;-webkit-tap-highlight-color:transparent}
+.hidden{display:none!important}
+.header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column}
+.brand-name{font-family:'Rajdhani';font-weight:700;font-size:1.45rem;letter-spacing:3px;
+  background:linear-gradient(90deg,var(--gold),var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-sub{font-family:'Share Tech Mono';font-size:.52rem;color:var(--text2);letter-spacing:1px}
+.status-pill{display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--border);
+  border-radius:20px;padding:5px 11px;font-family:'Share Tech Mono';font-size:.55rem;color:var(--text2)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--text2)}
+.dot.on{background:var(--teal);box-shadow:0 0 8px var(--teal)}
+.dot.live{background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.panel{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--border);
+  border-radius:12px;padding:11px;margin-bottom:10px}
+.panel-title{font-family:'Rajdhani';font-size:.62rem;font-weight:700;color:var(--gold);
+  letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.panel-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);
+  padding:9px;font-family:'Share Tech Mono';font-size:.7rem;margin-bottom:7px}
+input:focus{outline:none;border-color:var(--teal)}
+.btn{border:none;border-radius:8px;padding:10px 14px;font-family:'Rajdhani';font-weight:700;font-size:.72rem;
+  letter-spacing:1px;cursor:pointer;margin:3px 4px 3px 0;color:#0a0d22}
+.btn-primary{background:linear-gradient(90deg,var(--teal),var(--violet));color:#fff}
+.btn-danger{background:linear-gradient(90deg,var(--amber),var(--gold));color:#1a1206}
+.btn-secondary{background:var(--panel2);color:var(--text)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:9px;text-align:center}
+.stat-label{font-family:'Share Tech Mono';font-size:.5rem;color:var(--text2);text-transform:uppercase}
+.stat-value{font-family:'Rajdhani';font-weight:700;font-size:1.05rem;margin-top:3px}
+.stat-sub{font-family:'Share Tech Mono';font-size:.5rem;color:var(--text2);margin-top:1px}
+.teal{color:var(--teal)} .violet{color:var(--violet)} .gold{color:var(--gold)}
+.green{color:var(--green)} .amber{color:var(--amber)} .neut{color:var(--neut)}
+.market{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.market-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:8px;text-align:center}
+.mc-label{font-family:'Share Tech Mono';font-size:.48rem;color:var(--text2)}
+.mc-val{font-family:'Rajdhani';font-weight:700;font-size:.92rem;margin-top:2px}
+.rs-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.rs-item{font-family:'Share Tech Mono';font-size:.56rem;color:var(--text2)}
+.rs-item span{color:var(--text)}
+.regime-badge{font-family:'Rajdhani';font-weight:700;font-size:1rem}
+.uni-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:3px 9px;
+  font-family:'Share Tech Mono';font-size:.52rem;color:var(--teal)}
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.sig-card{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:6px;text-align:center}
+.sig-name{font-family:'Share Tech Mono';font-size:.46rem;color:var(--text2);text-transform:uppercase}
+.sig-val{font-family:'Rajdhani';font-weight:700;font-size:.74rem;margin-top:2px}
+.sig-bull{color:var(--green)} .sig-bear{color:var(--violet)} .sig-neut{color:var(--neut)}
+.score-wrap{display:flex;align-items:center;gap:10px;margin-top:6px}
+.score-num{font-family:'Rajdhani';font-weight:700;font-size:1.8rem}
+.score-bar{flex:1;height:9px;background:var(--bg);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.score-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--teal));width:0%}
+.pos-item{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:9px;margin-bottom:7px}
+.pos-head{display:flex;justify-content:space-between;align-items:center}
+.pos-sym{font-family:'Rajdhani';font-weight:700;font-size:.95rem}
+.pos-stage{font-family:'Share Tech Mono';font-size:.5rem;padding:2px 7px;border-radius:10px}
+.stage-hunt{background:rgba(20,184,196,.14);color:var(--teal)}
+.stage-be{background:rgba(40,217,163,.14);color:var(--green)}
+.pos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}
+.pc-label{font-family:'Share Tech Mono';font-size:.46rem;color:var(--text2)}
+.pc-val{font-family:'Rajdhani';font-weight:700;font-size:.7rem}
+.pc-close-btn{width:100%;background:linear-gradient(90deg,var(--amber),var(--gold));border:none;border-radius:7px;
+  padding:7px;font-family:'Rajdhani';font-weight:700;font-size:.62rem;color:#1a1206;cursor:pointer;margin-top:6px}
+.sp-row{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid rgba(124,92,255,.08)}
+.sp-row:last-child{border-bottom:none}
+.sp-key{font-family:'Share Tech Mono';font-size:.55rem;color:var(--text2)}
+.sp-val{font-family:'Rajdhani';font-weight:600;font-size:.66rem;text-align:right}
+.report-row{display:flex;gap:6px;flex-wrap:wrap}
+.report-btn{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:7px 10px;
+  font-family:'Rajdhani';font-weight:600;font-size:.64rem;color:var(--text);cursor:pointer}
+#console{background:#080a1c;border:1px solid var(--border);border-radius:8px;padding:8px;height:180px;
+  overflow-y:auto;font-family:'Share Tech Mono';font-size:.56rem;line-height:1.5}
+.log-i{color:var(--text2)} .log-s{color:var(--green)} .log-w{color:var(--gold)} .log-e{color:var(--amber)}
+.toggle-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0}
+.toggle-row label{font-family:'Share Tech Mono';font-size:.58rem;color:var(--text2)}
+.switch{position:relative;width:40px;height:20px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:var(--bg);border:1px solid var(--border);border-radius:20px;cursor:pointer;transition:.2s}
+.slider::before{content:'';position:absolute;width:14px;height:14px;left:3px;top:2px;background:var(--text2);border-radius:50%;transition:.2s}
+.switch input:checked + .slider{background:rgba(20,184,196,.3);border-color:var(--teal)}
+.switch input:checked + .slider::before{transform:translateX(19px);background:var(--teal)}
+.modal-bg{position:fixed;inset:0;background:rgba(8,10,28,.85);display:flex;align-items:center;justify-content:center;z-index:50}
+.modal{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;max-width:300px;text-align:center}
+.modal-title{font-family:'Rajdhani';font-weight:700;font-size:1rem;color:var(--gold);margin-bottom:8px}
+.modal-msg{font-size:.8rem;color:var(--text2);margin-bottom:14px}
+.modal-yes{background:linear-gradient(90deg,var(--amber),var(--gold));color:#1a1206;border:none;border-radius:8px;padding:9px 16px;font-weight:700;font-family:'Rajdhani';margin:0 5px;cursor:pointer}
+.modal-no{background:var(--panel2);color:var(--text);border:none;border-radius:8px;padding:9px 16px;font-weight:700;font-family:'Rajdhani';margin:0 5px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="brand">
+    <div class="brand-name">GOVINDA</div>
+    <div class="brand-sub">SCALP · 5M→1H STRUCTURAL SL · 1.5% TP</div>
+  </div>
+  <div style="display:flex;gap:6px;flex-wrap:wrap">
+    <div class="status-pill" id="soundPill" onclick="testSound()" style="cursor:pointer"><div class="dot" id="soundDot"></div><span id="soundLabel">SOUND: TAP TO TEST</span></div>
+    <div class="status-pill"><div class="dot" id="connDot"></div><span id="connLabel">OFFLINE</span></div>
+  </div>
+</div>
+
+<!-- API CONFIG -->
+<div class="panel">
+  <div class="panel-title">⚡ API Configuration</div>
+  <input id="apiKey" placeholder="Bybit API Key" autocomplete="off">
+  <input id="apiSecret" type="password" placeholder="Bybit API Secret" autocomplete="off">
+  <div class="toggle-row">
+    <label>Use Testnet</label>
+    <label class="switch"><input type="checkbox" id="tgTestnet"><span class="slider"></span></label>
+  </div>
+  <div>
+    <button class="btn btn-primary" id="connectBtn" onclick="connectAPI()">⚡ Connect &amp; Verify</button>
+    <button class="btn btn-primary hidden" id="startBtn" onclick="startBot()" disabled>▶ START ENGINE</button>
+    <button class="btn btn-danger hidden" id="stopBtn" onclick="stopBot()">⏹ STOP</button>
+    <button class="btn btn-secondary" onclick="clearAll()">↺ Reset</button>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="panel">
+  <div class="panel-title">📊 Session</div>
+  <div class="stats">
+    <div class="stat-card"><div class="stat-label">Balance</div><div class="stat-value gold" id="statBalance">—</div><div class="stat-sub">USDT</div></div>
+    <div class="stat-card"><div class="stat-label">Session P&amp;L</div><div class="stat-value green" id="statPnl">—</div><div class="stat-sub" id="statPnlPct">+0.00%</div></div>
+    <div class="stat-card"><div class="stat-label">Trades</div><div class="stat-value teal" id="statTrades">0</div><div class="stat-sub" id="statWR">W:0 L:0</div></div>
+  </div>
+  <div class="stats" style="margin-top:8px">
+    <div class="stat-card"><div class="stat-label">Open Slots</div><div class="stat-value cyan" id="statOpen">0/2</div><div class="stat-sub" id="statSlots">0 remaining</div></div>
+    <div class="stat-card"><div class="stat-label">Status</div><div class="stat-value gold" id="statStatus">IDLE</div><div class="stat-sub" id="statScanSub">waiting</div></div>
+    <div class="stat-card"><div class="stat-label">Universe</div><div class="stat-value violet" id="statUni">0</div><div class="stat-sub">pairs</div></div>
+  </div>
+</div>
+
+<!-- MARKET / REGIME -->
+<div class="market">
+  <div class="market-card"><div class="mc-label">BTC 5M Trend</div><div class="mc-val gold" id="mcBtc">—</div></div>
+  <div class="market-card"><div class="mc-label">Regime</div><div class="mc-val teal" id="mcRegime">—</div></div>
+  <div class="market-card"><div class="mc-label">Engine</div><div class="mc-val violet" id="mcEngine">IDLE</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-title">🎛 Regime Status</div>
+  <div class="rs-grid">
+    <div class="rs-item">Regime: <span id="regimeName">—</span></div>
+    <div class="rs-item">Score Thresh: <span id="regimeThresh">—</span></div>
+    <div class="rs-item">Max Pos: <span id="regimeMaxPos">2</span></div>
+    <div class="rs-item">Risk Mult: <span id="regimeRisk">—</span></div>
+    <div class="rs-item">Cooldown: <span id="regimeCooldown">—</span></div>
+    <div class="rs-item">TP Target: <span id="regimeTp">1.5% (fixed)</span></div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="uni-bar">
+    <div style="font-family:'Share Tech Mono';font-size:.54rem;color:var(--text2)">SAFE UNIVERSE:</div>
+    <div id="uniChips"></div>
+  </div>
+</div>
+
+<!-- SIGNAL / SCORE -->
+<div class="panel">
+  <div class="panel-title">🎯 Latest Signal <span id="sigSym" style="color:var(--teal);font-size:.7rem"></span></div>
+  <div class="sig-grid" id="sigGrid"></div>
+  <div class="score-wrap">
+    <div class="score-num" id="scoreNum">—</div>
+    <div class="score-bar"><div class="score-fill" id="scoreFill"></div></div>
+    <div class="sig-val" id="scoreGrade">—</div>
+  </div>
+</div>
+
+<!-- POSITIONS -->
+<div class="panel">
+  <div class="panel-title">📈 Live Positions</div>
+  <div id="positions"><div style="color:var(--text2);font-size:.7rem;text-align:center;padding:8px">No open positions</div></div>
+</div>
+
+<!-- GUARDS -->
+<div class="panel">
+  <div class="panel-title">🛡 Pre-Trade Guards (default OFF)</div>
+  <div class="toggle-row"><label>Spread guard (max 0.08%)</label><label class="switch"><input type="checkbox" id="tgSpread"><span class="slider"></span></label></div>
+  <div class="toggle-row"><label>Order-book depth guard</label><label class="switch"><input type="checkbox" id="tgOB"><span class="slider"></span></label></div>
+  <div class="toggle-row"><label>Fee-coverage guard (≥1.5× fees)</label><label class="switch"><input type="checkbox" id="tgFee"><span class="slider"></span></label></div>
+</div>
+
+<!-- SPEC -->
+<div class="panel">
+  <div class="panel-title">📋 Engine Spec</div>
+  <div class="sp-row"><span class="sp-key">Architecture</span><span class="sp-val teal">5M→1H Structural SL</span></div>
+  <div class="sp-row"><span class="sp-key">TF Stack</span><span class="sp-val gold">15M ctx · 5M(3M) · 1M trig · 1H gate · 4H bias</span></div>
+  <div class="sp-row"><span class="sp-key">SL Anchor</span><span class="sp-val gold">5M+1H gap (25% into gap, ×1.20)</span></div>
+  <div class="sp-row"><span class="sp-key">TP (100%)</span><span class="sp-val green">Resting reduceOnly LIMIT @ +1.5%</span></div>
+  <div class="sp-row"><span class="sp-key">Leverage</span><span class="sp-val teal">Dynamic 1/(SL%×1.25), cap 75x</span></div>
+  <div class="sp-row"><span class="sp-key">Sizing</span><span class="sp-val gold">60% × risk of free balance</span></div>
+  <div class="sp-row"><span class="sp-key">Max Positions</span><span class="sp-val teal">2</span></div>
+  <div class="sp-row"><span class="sp-key">Blocked Coins</span><span class="sp-val amber">XLM · XRP · INJ</span></div>
+  <div class="sp-row"><span class="sp-key">Universe</span><span class="sp-val green">$10M+ 24h vol · $3M+ OI</span></div>
+  <div class="sp-row"><span class="sp-key">Score Thresh</span><span class="sp-val green">HOT≥66 WARM≥66 COLD≥66</span></div>
+  <div class="sp-row"><span class="sp-key">Entry</span><span class="sp-val violet">Sweep→Rejection→Momentum→Volume</span></div>
+  <div class="sp-row"><span class="sp-key">BTC Corr Gate</span><span class="sp-val green">≥ 0.70</span></div>
+</div>
+
+<!-- REPORTS -->
+<div class="panel">
+  <div class="panel-title">📄 Reports</div>
+  <div class="report-row">
+    <button class="report-btn" onclick="downloadReport('today')">📄 Today</button>
+    <button class="report-btn" onclick="downloadReport('month')">📅 This Month</button>
+    <button class="report-btn" onclick="downloadReport('all')">📦 All Trades</button>
+    <button class="report-btn" onclick="downloadReport('last')">⬇ Last Trade</button>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-title">🖥 Console</div>
+  <div id="console"></div>
+</div>
+
+<div id="modal" class="modal-bg hidden">
+  <div class="modal">
+    <div class="modal-title">Close Position?</div>
+    <div class="modal-msg" id="modalMsg"></div>
+    <button class="modal-yes" onclick="confirmClose()">YES, CLOSE</button>
+    <button class="modal-no" onclick="cancelClose()">CANCEL</button>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// GOVINDA — Bybit V5 Perpetual-Futures Structural Scalper
+// Single-file. Runs on iPhone via GitHub Pages.
+// TP: resting reduceOnly LIMIT (maker) @ +1.5%. SL: market (structural).
+// ============================================================
+
+// ---------- SECTION A — CONFIG ----------
+const URLS = { mainnet:'https://api.bybit.com', testnet:'https://api-testnet.bybit.com' };
+const MAX_POSITIONS       = 2;
+const BLACKLIST_SYMBOLS   = ['XLMUSDT','XRPUSDT','INJUSDT'];
+const TP_PCT              = 0.015;     // +1.5% fixed take-profit (100% exit, maker limit)
+const SL_WIDEN_FACTOR     = 1.20;      // push structural SL 20% further from entry
+const SL_GAP_FRACTION     = 0.25;      // place SL 25% into the 5M→1H swing gap
+const LEV_CAP             = 75;
+const RISK_FRACTION       = 0.60;      // 60% × risk of free balance (regime-scaled)
+const SPREAD_MAX_PCT      = 0.0008;    // 0.08% (only enforced if guard ON)
+const FEE_RATE            = 0.00055;   // taker ~0.055% (round-trip guard)
+const UNIVERSE_CAP        = 150;
+const UNIVERSE_MIN_VOL    = 10_000_000;
+const UNIVERSE_MIN_OI     = 3_000_000;
+const UNIVERSE_REFRESH_MS = 30*60*1000;
+const TIER1_INTERVAL_MS   = 10_000;    // ranking scan
+const TIER2_INTERVAL_MS   = 1_500;     // deep analysis scan
+const BTC_CORR_MIN        = 0.70;      // entry correlation gate
+const VOL_SPIKE_MULT      = 2.0;       // > 200% of 20-candle MA
+const KLINE_CACHE_TTL     = { '1':4000, '3':7000, '5':10000, '15':25000, '60':50000, '240':80000, 'D':120000 };
+const STATE_KEY           = 'govinda_scalp_v1_state';
+const STATE_SCHEMA        = 1;
+
+// Scoring pool (raw points, normalized to 0..100). Total = 155.
+const SCORE_POOL = {
+  zone15:15, bias15:10, candle15:10,   // 15M context (WHERE + direction)
+  mss5:25, sweep5:20, displacement:15, vwap5:10, // 5M execution engine
+  volume:15, momentum:10, atr:10, btc:10, oi:5   // confirmation
+};
+const SCORE_POOL_TOTAL = Object.values(SCORE_POOL).reduce((a,b)=>a+b,0);
+const EXEC_VALID=70, EXEC_STRONG=80, EXEC_ELITE=90;
+
+const REGIME_CFG = {
+  HOT:  { scoreThresh:66, riskMult:1.00, cooldownMs:30000, label:'🔥 HOT' },
+  WARM: { scoreThresh:66, riskMult:0.82, cooldownMs:55000, label:'🌡 WARM' },
+  COLD: { scoreThresh:66, riskMult:0.62, cooldownMs:90000, label:'❄ COLD' },
+};
+function getCfg(){ return REGIME_CFG[S.regime] || REGIME_CFG.COLD; }
+
+// ---------- SECTION B — STATE ----------
+let S = {
+  connected:false, running:false, apiKey:'', apiSecret:'', baseUrl:URLS.mainnet,
+  balance:0, startBalance:1, sessionPnl:0,
+  trades:[], openPositions:[], wins:0, losses:0,
+  isLooping:false, tier1Timer:null, tier2Timer:null, monitorTimer:null,
+  btcTrend:'NEUTRAL', regime:'COLD',
+  tradableUniverse:[], universeLastBuilt:0, focusPairs:[],
+  coinLastTrade:{}, lastResetDay:null,
+  modalTargetSymbol:null,
+  guards:{ spread:false, ob:false, fee:false },
+};
+
+// Concurrency control
+let _execLocked=false; let _execQueue=[];
+const _pendingExecutions=new Set();   // symbols signal→confirmation
+const _inFlightOrders=new Set();
+const _watchQueue=new Map();          // symbol → {result, attempts, addedAt}
+const WATCH_MAX_ATTEMPTS=6, WATCH_INTERVAL_MS=30000, WATCH_MAX_AGE_MS=180000;
+const _instrCache=new Map();          // symbol → {qtyStep, tickSize, minQty}
+const _klineCache=new Map();          // url → {t, data}
+let _btcCloses1m=[];                  // cached BTC 1m closes for correlation/trend
+
+// ---------- SECTION C — UTILITIES ----------
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function log(type,msg){
+  const c=document.getElementById('console');
+  const t=new Date().toLocaleTimeString();
+  const div=document.createElement('div');
+  div.className='log-'+type;
+  div.textContent=`[${t}] ${msg}`;
+  c.appendChild(div);
+  while(c.children.length>240) c.removeChild(c.firstChild);
+  c.scrollTop=c.scrollHeight;
+}
+function fp(n){ if(n==null||isNaN(n))return '—'; const a=Math.abs(n);
+  return a>=100?n.toFixed(2):a>=1?n.toFixed(4):a>=0.01?n.toFixed(5):n.toFixed(7); }
+function stepDecimals(step){ const s=String(step); return s.includes('.')?s.split('.')[1].replace(/0+$/,'').length:0; }
+function roundStep(v,step){ const d=stepDecimals(step); const r=Math.floor(v/step)*step; return parseFloat(r.toFixed(d)); }
+
+async function hmac(secret,msg){
+  const enc=new TextEncoder();
+  const key=await crypto.subtle.importKey('raw',enc.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
+  const sig=await crypto.subtle.sign('HMAC',key,enc.encode(msg));
+  return Array.from(new Uint8Array(sig)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function api(method,endpoint,params={}){
+  const ts=Date.now().toString(), recv='5000';
+  let url=S.baseUrl+endpoint, body='', qs='';
+  if(method==='GET'){
+    qs=Object.keys(params).sort().map(k=>`${k}=${params[k]}`).join('&');
+    if(qs) url+='?'+qs;
+  } else { body=JSON.stringify(params); }
+  const payload=ts+S.apiKey+recv+(method==='GET'?qs:body);
+  const sign=await hmac(S.apiSecret,payload);
+  const headers={'X-BAPI-API-KEY':S.apiKey,'X-BAPI-TIMESTAMP':ts,'X-BAPI-RECV-WINDOW':recv,'X-BAPI-SIGN':sign};
+  const opt={method,headers};
+  if(method!=='GET'){ headers['Content-Type']='application/json'; opt.body=body; }
+  const r=await fetch(url,opt);
+  return await r.json();
+}
+async function pub(endpoint){
+  const r=await fetch(S.baseUrl+endpoint);
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  return await r.json();
+}
+async function pubCached(endpoint,tf){
+  const ttl=KLINE_CACHE_TTL[tf]||8000;
+  const hit=_klineCache.get(endpoint);
+  if(hit && Date.now()-hit.t<ttl) return hit.data;
+  const data=await pub(endpoint);
+  _klineCache.set(endpoint,{t:Date.now(),data});
+  return data;
+}
+// Bybit kline row: [start, open, high, low, close, volume, turnover]. Return oldest→newest.
+async function klines(symbol,interval,limit){
+  const ep=`/v5/market/kline?category=linear&symbol=${symbol}&interval=${interval}&limit=${limit}`;
+  const r=await pubCached(ep,interval);
+  return (r.result?.list||[]).slice().reverse();
+}
+const O=k=>parseFloat(k[1]), H=k=>parseFloat(k[2]), L=k=>parseFloat(k[3]), C=k=>parseFloat(k[4]), V=k=>parseFloat(k[5]);
+
+// ---------- SECTION D — INDICATORS ----------
+function calcEMA(arr,p){ if(arr.length<p) return arr[arr.length-1]||0;
+  const k=2/(p+1); let e=arr.slice(0,p).reduce((a,b)=>a+b,0)/p;
+  for(let i=p;i<arr.length;i++) e=arr[i]*k+e*(1-k); return e; }
+function calcEMAFull(arr,p){ const k=2/(p+1); const out=[]; let e=arr[0];
+  for(let i=0;i<arr.length;i++){ e=i?arr[i]*k+e*(1-k):arr[i]; out.push(e); } return out; }
+function calcRSI(closes,p=14){ if(closes.length<p+1) return 50;
+  let g=0,l=0; for(let i=closes.length-p;i<closes.length;i++){ const d=closes[i]-closes[i-1]; if(d>=0)g+=d; else l-=d; }
+  if(l===0) return 100; const rs=(g/p)/(l/p); return 100-100/(1+rs); }
+function calcMACD(closes){ const ef=calcEMAFull(closes,12), es=calcEMAFull(closes,26);
+  const line=ef.map((v,i)=>v-es[i]); const sig=calcEMAFull(line.slice(-18),9);
+  const m=line[line.length-1], s=sig[sig.length-1]; return {macd:m,signal:s,hist:m-s}; }
+function calcStochRSI(closes,p=14,sm=3){ if(closes.length<p*2) return 50;
+  const rsis=[]; for(let i=p;i<closes.length;i++) rsis.push(calcRSI(closes.slice(i-p,i+1),p));
+  const win=rsis.slice(-p); const mn=Math.min(...win), mx=Math.max(...win);
+  const k=mx===mn?50:((rsis[rsis.length-1]-mn)/(mx-mn))*100; return k; }
+function calcATR(ks,p=14){ if(ks.length<p+1) return 0; let s=0;
+  for(let i=ks.length-p;i<ks.length;i++){ const tr=Math.max(H(ks[i])-L(ks[i]),Math.abs(H(ks[i])-C(ks[i-1])),Math.abs(L(ks[i])-C(ks[i-1]))); s+=tr; }
+  return s/p; }
+function calcVWAP(ks){ let pv=0,vv=0; for(const k of ks){ const tp=(H(k)+L(k)+C(k))/3; pv+=tp*V(k); vv+=V(k); } return vv?pv/vv:C(ks[ks.length-1]); }
+function tfBias(ks){ if(ks.length<10) return 'NEUTRAL'; const cl=ks.map(C); const e9=calcEMA(cl.slice(-20),9), e21=calcEMA(cl.slice(-30),21);
+  if(e9>e21*1.0008) return 'BULL'; if(e9<e21*0.9992) return 'BEAR'; return 'NEUTRAL'; }
+
+// ---------- SECTION E — CANDLESTICK PATTERN RECOGNITION ----------
+function body(k){ return Math.abs(C(k)-O(k)); }
+function range(k){ return H(k)-L(k) || 1e-9; }
+function upWick(k){ return H(k)-Math.max(O(k),C(k)); }
+function loWick(k){ return Math.min(O(k),C(k))-L(k); }
+const isBull=k=>C(k)>O(k), isBear=k=>C(k)<O(k);
+
+// Reversal patterns
+function isHammer(k){ const b=body(k); return loWick(k)>=2*b && upWick(k)<=b*0.6 && b>0 && (Math.max(O(k),C(k))>L(k)+range(k)*0.5); }
+function isDragonflyDoji(k){ const b=body(k); return b<=range(k)*0.1 && loWick(k)>=range(k)*0.55 && upWick(k)<=range(k)*0.15; }
+function isShootingStar(k){ const b=body(k); return upWick(k)>=2*b && loWick(k)<=b*0.6 && b>0 && (Math.min(O(k),C(k))<H(k)-range(k)*0.5); }
+function isGravestoneDoji(k){ const b=body(k); return b<=range(k)*0.1 && upWick(k)>=range(k)*0.55 && loWick(k)<=range(k)*0.15; }
+function isBullEngulf(p,c){ return isBear(p)&&isBull(c)&&C(c)>=O(p)&&O(c)<=C(p)&&body(c)>body(p); }
+function isBearEngulf(p,c){ return isBull(p)&&isBear(c)&&O(c)>=C(p)&&C(c)<=O(p)&&body(c)>body(p); }
+function isMorningStar(a,b,c){ return isBear(a)&&body(b)<=range(a)*0.4&&isBull(c)&&C(c)>(O(a)+C(a))/2&&body(a)>range(a)*0.5; }
+function isEveningStar(a,b,c){ return isBull(a)&&body(b)<=range(a)*0.4&&isBear(c)&&C(c)<(O(a)+C(a))/2&&body(a)>range(a)*0.5; }
+function isTweezerBottom(p,c){ const tol=range(c)*0.12; return Math.abs(L(p)-L(c))<=tol && isBear(p)&&isBull(c); }
+function isTweezerTop(p,c){ const tol=range(c)*0.12; return Math.abs(H(p)-H(c))<=tol && isBull(p)&&isBear(c); }
+// V-Bottom / V-Top: sharp down (n bars) then sharp reclaim, or vice versa
+function isVBottom(ks){ if(ks.length<5)return false; const w=ks.slice(-5); const lows=w.map(L); const li=lows.indexOf(Math.min(...lows));
+  if(li===0||li===4) return false; const down=C(w[li])<C(w[0]); const up=C(w[4])>C(w[li])*1.002; return down&&up; }
+function isVTop(ks){ if(ks.length<5)return false; const w=ks.slice(-5); const highs=w.map(H); const hi=highs.indexOf(Math.max(...highs));
+  if(hi===0||hi===4) return false; const up=C(w[hi])>C(w[0]); const down=C(w[4])<C(w[hi])*0.998; return up&&down; }
+
+// Continuation patterns
+function isMarubozuBull(k){ return isBull(k)&&body(k)>=range(k)*0.85; }
+function isThreeWhiteSoldiers(ks){ if(ks.length<3)return false; const w=ks.slice(-3);
+  return w.every(isBull)&&C(w[1])>C(w[0])&&C(w[2])>C(w[1])&&w.every(k=>upWick(k)<=body(k)*0.5); }
+function isBullFlag(ks){ if(ks.length<8)return false; const imp=ks.slice(-8,-3), flag=ks.slice(-3);
+  const impMove=(C(imp[imp.length-1])-O(imp[0]))/O(imp[0]); const flagRange=(Math.max(...flag.map(H))-Math.min(...flag.map(L)))/C(flag[flag.length-1]);
+  return impMove>0.004 && flagRange<Math.abs(impMove)*0.6; }
+function isAscendingTriangle(ks){ if(ks.length<8)return false; const w=ks.slice(-8);
+  const highs=w.map(H), lows=w.map(L); const flatHigh=(Math.max(...highs)-Math.min(...highs))/Math.max(...highs)<0.004;
+  const risingLow=lows[lows.length-1]>lows[0]*1.001; return flatHigh&&risingLow; }
+function isHighVolBreakout(ks){ if(ks.length<22)return false; const vMA=ks.slice(-21,-1).map(V).reduce((a,b)=>a+b,0)/20;
+  const last=ks[ks.length-1]; const priorHigh=Math.max(...ks.slice(-21,-1).map(H));
+  return V(last)>vMA*VOL_SPIKE_MULT && C(last)>priorHigh; }
+
+// volume spike (current > 200% of 20-candle MA)
+function volSpike(ks){ if(ks.length<21) return {spike:false,ratio:0};
+  const ma=ks.slice(-21,-1).map(V).reduce((a,b)=>a+b,0)/20; const cur=V(ks[ks.length-1]);
+  const ratio=ma>0?cur/ma:0; return {spike:ratio>=VOL_SPIKE_MULT, ratio}; }
+
+// ---------- SECTION F — LEVELS / ZONES ----------
+// 15M structural S/R zones (2+ touches). Returns {supports:[{level,touches}], resistances:[...]}
+function findPivots(ks,lookback=3){ const piv={highs:[],lows:[]};
+  for(let i=lookback;i<ks.length-lookback;i++){ let ph=true,pl=true;
+    for(let j=1;j<=lookback;j++){ if(H(ks[i])<=H(ks[i-j])||H(ks[i])<=H(ks[i+j])) ph=false; if(L(ks[i])>=L(ks[i-j])||L(ks[i])>=L(ks[i+j])) pl=false; }
+    if(ph) piv.highs.push(H(ks[i])); if(pl) piv.lows.push(L(ks[i])); }
+  return piv; }
+function clusterLevels(levels,tolPct){ const out=[]; levels.sort((a,b)=>a-b);
+  for(const lv of levels){ const g=out.find(o=>Math.abs(o.level-lv)/o.level<=tolPct); if(g){ g.touches++; g.level=(g.level*(g.touches-1)+lv)/g.touches; } else out.push({level:lv,touches:1}); }
+  return out; }
+function find15MZones(ks){ const piv=findPivots(ks,3);
+  const supports=clusterLevels(piv.lows,0.0025).filter(z=>z.touches>=2);
+  const resistances=clusterLevels(piv.highs,0.0025).filter(z=>z.touches>=2);
+  return {supports,resistances}; }
+function priceAtStructuralZone(price,zones,atr){ const tol=Math.max(atr*0.6,price*0.001);
+  const nearSup=zones.supports.find(z=>Math.abs(price-z.level)<=tol);
+  const nearRes=zones.resistances.find(z=>Math.abs(price-z.level)<=tol);
+  return { atZone:!!(nearSup||nearRes), nearSupport:!!nearSup, nearResistance:!!nearRes,
+           supLevel:nearSup?nearSup.level:null, resLevel:nearRes?nearRes.level:null }; }
+// Previous-day high/low from daily candles
+function pdhPdl(daily){ if(daily.length<2) return {pdh:null,pdl:null}; const prev=daily[daily.length-2]; return {pdh:H(prev),pdl:L(prev)}; }
+
+// ---------- SECTION G — GUARDS ----------
+function isConsolidating(closes,p=14){ if(closes.length<p) return false; const w=closes.slice(-p);
+  const mn=Math.min(...w),mx=Math.max(...w); return (mx-mn)/mx<0.0035; }
+function isDeadVolume(ks,p=8){ if(ks.length<p+10) return false; const recent=ks.slice(-p).map(V).reduce((a,b)=>a+b,0)/p;
+  const base=ks.slice(-p-10,-p).map(V).reduce((a,b)=>a+b,0)/10; return base>0 && recent<base*0.45; }
+function spikeGuard(ks,atr){ if(!atr) return false; const k=ks[ks.length-1]; return Math.abs(C(k)-O(k))>atr*2.5; }
+
+// Pearson correlation of returns vs BTC
+function correlation(aCloses,bCloses){ const n=Math.min(aCloses.length,bCloses.length); if(n<10) return 0;
+  const ar=[],br=[]; for(let i=1;i<n;i++){ ar.push((aCloses[aCloses.length-n+i]-aCloses[aCloses.length-n+i-1])); br.push((bCloses[bCloses.length-n+i]-bCloses[bCloses.length-n+i-1])); }
+  const ma=ar.reduce((a,b)=>a+b,0)/ar.length, mb=br.reduce((a,b)=>a+b,0)/br.length;
+  let cov=0,va=0,vb=0; for(let i=0;i<ar.length;i++){ cov+=(ar[i]-ma)*(br[i]-mb); va+=(ar[i]-ma)**2; vb+=(br[i]-mb)**2; }
+  return (va&&vb)?cov/Math.sqrt(va*vb):0; }
+
+// ---------- SECTION H — SCORING ----------
+function calcStructuralScore(raw){ return Math.round(
+  (raw.zone15||0)*SCORE_POOL.zone15 + (raw.mss5||0)*SCORE_POOL.mss5 + (raw.sweep5||0)*SCORE_POOL.sweep5 +
+  (raw.displacement||0)*SCORE_POOL.displacement + (raw.candle15||0)*SCORE_POOL.candle15); }
+function getStructuralMin(bias4h,dir){ if(!bias4h||bias4h==='NEUTRAL') return 50;
+  const opposes=(bias4h==='BULL'&&dir==='SHORT')||(bias4h==='BEAR'&&dir==='LONG');
+  const aligns =(bias4h==='BULL'&&dir==='LONG') ||(bias4h==='BEAR'&&dir==='SHORT');
+  if(opposes) return 60; if(aligns) return 45; return 50; }
+function calcAdaptiveScore(raw){ let e=0; for(const [k,m] of Object.entries(SCORE_POOL)) e+=m*Math.max(0,Math.min(1,raw[k]||0));
+  return Math.round((e/SCORE_POOL_TOTAL)*100); }
+function deriveGrade(s){ return s>=EXEC_ELITE?'A+':s>=EXEC_STRONG?'A':'B'; }
+
+// ---------- SECTION I — STRUCTURAL SL ----------
+function swingLow(ks,n){ return Math.min(...ks.slice(-n).map(L)); }
+function swingHigh(ks,n){ return Math.max(...ks.slice(-n).map(H)); }
+// 5M→1H gap, SL 25% into gap, then widen ×1.20
+function calcStructuralSL(k5,k1h,dir,entry){
+  if(dir==='LONG'){
+    const inner=swingLow(k5,12), outer=swingLow(k1h,10);
+    let slPrice=inner-SL_GAP_FRACTION*Math.max(0,(inner-outer));
+    if(slPrice>=entry) slPrice=entry*0.99;
+    let slPct=(entry-slPrice)/entry; slPct=Math.min(slPct,0.25)*SL_WIDEN_FACTOR;
+    return { slPrice:entry*(1-slPct), slPct, method:'5M-1H-GAP-25%' };
+  } else {
+    const inner=swingHigh(k5,12), outer=swingHigh(k1h,10);
+    let slPrice=inner+SL_GAP_FRACTION*Math.max(0,(outer-inner));
+    if(slPrice<=entry) slPrice=entry*1.01;
+    let slPct=(slPrice-entry)/entry; slPct=Math.min(slPct,0.25)*SL_WIDEN_FACTOR;
+    return { slPrice:entry*(1+slPct), slPct, method:'5M-1H-GAP-25%' };
+  }
+}
+function calcLeverage(slPct){ const lev=Math.floor(1/(slPct*1.25)); return Math.max(1,Math.min(LEV_CAP,lev||1)); }
+
+// ---------- SECTION J — INSTRUMENT INFO / PRE-TRADE GUARDS ----------
+async function getInstr(symbol){
+  if(_instrCache.has(symbol)) return _instrCache.get(symbol);
+  const r=await pub(`/v5/market/instruments-info?category=linear&symbol=${symbol}`);
+  const it=r.result?.list?.[0];
+  const info={ qtyStep:parseFloat(it?.lotSizeFilter?.qtyStep||'0.001'),
+               minQty:parseFloat(it?.lotSizeFilter?.minOrderQty||'0.001'),
+               tickSize:parseFloat(it?.priceFilter?.tickSize||'0.0001') };
+  _instrCache.set(symbol,info); return info;
+}
+async function checkSpread(symbol,price){
+  if(!S.guards.spread) return {ok:true,spreadPct:0};
+  try{ const r=await pub(`/v5/market/tickers?category=linear&symbol=${symbol}`); const t=r.result?.list?.[0];
+    const bid=parseFloat(t.bid1Price), ask=parseFloat(t.ask1Price); const sp=(ask-bid)/((ask+bid)/2);
+    return {ok:sp<=SPREAD_MAX_PCT, spreadPct:sp}; }catch(e){ return {ok:true,spreadPct:0}; }
+}
+async function checkOBDepth(symbol){
+  if(!S.guards.ob) return {ok:true};
+  try{ const r=await pub(`/v5/market/orderbook?category=linear&symbol=${symbol}&limit=25`);
+    const bids=(r.result?.b||[]).reduce((a,x)=>a+parseFloat(x[1]),0);
+    const asks=(r.result?.a||[]).reduce((a,x)=>a+parseFloat(x[1]),0);
+    return {ok:(bids>0&&asks>0)}; }catch(e){ return {ok:true}; }
+}
+function checkFeeCoverage(expectedMovePct){
+  if(!S.guards.fee) return {ok:true};
+  return {ok: expectedMovePct >= FEE_RATE*2*1.5}; // round-trip × 1.5
+}
+
+// =====================================================================
+// === GOVINDA ENTRY LOGIC — WIRED PER UPLOADED SPEC ===================
+// Sequence: Liquidity Sweep → Rejection → Momentum (engulf) → Volume.
+// Filters: Location (PDH/PDL or S/R 2+ touches), vetoes, BTC corr ≥0.7,
+//          volatility (no dead vol / narrow consolidation).
+// Patterns recognised below in detectPatterns(). analyzeSymbol() returns
+// a scored candidate or null.
+// =====================================================================
+function detectPatterns(k5,k1){
+  const c=k1[k1.length-1], p=k1[k1.length-2], a=k1[k1.length-3];
+  return {
+    // reversal
+    hammer:isHammer(c), dragonfly:isDragonflyDoji(c), shootingStar:isShootingStar(c), gravestone:isGravestoneDoji(c),
+    bullEngulf:isBullEngulf(p,c), bearEngulf:isBearEngulf(p,c),
+    morningStar:isMorningStar(a,p,c), eveningStar:isEveningStar(a,p,c),
+    tweezerBottom:isTweezerBottom(p,c), tweezerTop:isTweezerTop(p,c),
+    vBottom:isVBottom(k1), vTop:isVTop(k1),
+    // continuation
+    marubozuBull:isMarubozuBull(c), threeSoldiers:isThreeWhiteSoldiers(k1),
+    bullFlag:isBullFlag(k5), ascTriangle:isAscendingTriangle(k5), volBreakout:isHighVolBreakout(k5)
+  };
+}
+// Liquidity sweep: latest candle wick clears prior swing high/low then closes back inside.
+function detectSweep(ks,dir){ if(ks.length<14) return false; const k=ks[ks.length-1];
+  const priorHigh=Math.max(...ks.slice(-13,-1).map(H)); const priorLow=Math.min(...ks.slice(-13,-1).map(L));
+  if(dir==='LONG')  return L(k)<priorLow && C(k)>priorLow;       // swept lows, reclaimed
+  if(dir==='SHORT') return H(k)>priorHigh && C(k)<priorHigh;     // swept highs, rejected
+  return false; }
+
+async function analyzeSymbol(pair){
+  try{
+    const symbol=pair.symbol;
+    if(BLACKLIST_SYMBOLS.includes(symbol)) return null;
+    if(!S.running) return null;
+
+    log('i',`🔍 Scanning ${symbol}…`);
+
+    const [k1,k3,k5,k15,k1h,k4h,kD] = await Promise.all([
+      klines(symbol,'1',60), klines(symbol,'3',60), klines(symbol,'5',80),
+      klines(symbol,'15',50), klines(symbol,'60',30), klines(symbol,'240',20), klines(symbol,'D',3)
+    ]);
+    if(k15.length<30||k5.length<25||k1.length<20){ log('i',`  ↳ ${symbol}: not enough candle data — skip`); return null; }
+
+    const price=C(k15[k15.length-1]); if(!price||price<=0){ log('i',`  ↳ ${symbol}: bad price — skip`); return null; }
+    const closes15=k15.map(C), closes5=k5.map(C), closes1=k1.map(C);
+    const atr15=calcATR(k15,14), atr5=calcATR(k5,14);
+
+    // --- VOLATILITY FILTER (guards) ---
+    if(isConsolidating(closes15,14)){ log('i',`  ↳ ${symbol}: consolidating (no volatility) — skip`); return null; }
+    if(isDeadVolume(k5,8)){ log('i',`  ↳ ${symbol}: dead volume — skip`); return null; }
+    if(spikeGuard(k15,atr15)){ log('i',`  ↳ ${symbol}: abnormal spike candle — skip`); return null; }
+
+    // --- DIRECTION (5M structure leads; 1H gate; 4H soft bias) ---
+    const bias5=tfBias(k5), bias1h=tfBias(k1h), bias4h=k4h.length>=10?tfBias(k4h):'NEUTRAL';
+    const bias15=tfBias(k15);
+    // candidate direction from 5M structure
+    let dir = bias5==='BULL'?'LONG':bias5==='BEAR'?'SHORT':(bias15==='BULL'?'LONG':bias15==='BEAR'?'SHORT':null);
+    if(!dir){ log('i',`  ↳ ${symbol}: no clear direction (5M ${bias5} / 15M ${bias15}) — skip`); return null; }
+    // 1H direction gate (hard): no counter-1H trades when 1H clearly opposes
+    if(bias1h==='BULL'&&dir==='SHORT'){ log('i',`  ↳ ${symbol}: 1H BULL opposes SHORT signal — skip`); return null; }
+    if(bias1h==='BEAR'&&dir==='LONG') { log('i',`  ↳ ${symbol}: 1H BEAR opposes LONG signal — skip`); return null; }
+
+    log('i',`  ↳ ${symbol}: direction ${dir} | 5M ${bias5} 1H ${bias1h} 4H ${bias4h}`);
+
+    // --- LOCATION FILTER: PDH/PDL or structural S/R (2+ touches) ---
+    const zones=find15MZones(k15);
+    const zc=priceAtStructuralZone(price,zones,atr15);
+    const {pdh,pdl}=pdhPdl(kD);
+    const tol=Math.max(atr15*0.6,price*0.0012);
+    const nearPDH=pdh!=null&&Math.abs(price-pdh)<=tol;
+    const nearPDL=pdl!=null&&Math.abs(price-pdl)<=tol;
+    const atLocation = zc.atZone || nearPDH || nearPDL;
+    if(!atLocation){ log('i',`  ↳ ${symbol}: not at S/R zone or PDH/PDL — skip`); return null; }
+
+    // --- VETOES: No Short at Support; No Long at Resistance ---
+    const atSupport = zc.nearSupport || nearPDL;
+    const atResist  = zc.nearResistance || nearPDH;
+    if(dir==='SHORT' && atSupport && !atResist){ log('i',`  ↳ ${symbol}: SHORT vetoed — at support — skip`); return null; }
+    if(dir==='LONG'  && atResist  && !atSupport){ log('i',`  ↳ ${symbol}: LONG vetoed — at resistance — skip`); return null; }
+
+    log('i',`  ↳ ${symbol}: at location ✓ (zone:${zc.atZone} PDH:${nearPDH} PDL:${nearPDL})`);
+
+    // --- BTC CORRELATION GATE (≥0.70) ---
+    const corr = symbol==='BTCUSDT' ? 1 : correlation(closes1, _btcCloses1m);
+    if(Math.abs(corr) < BTC_CORR_MIN){ log('i',`  ↳ ${symbol}: BTC corr ${corr.toFixed(2)} < ${BTC_CORR_MIN} — skip`); return null; }
+
+    log('i',`  ↳ ${symbol}: BTC corr ${corr.toFixed(2)} ✓`);
+
+    // --- ENTRY SEQUENCE: Sweep → Rejection → Momentum → Volume ---
+    const pat=detectPatterns(k5,k1);
+    const sweep = detectSweep(k1,dir) || detectSweep(k5,dir);
+    const rejection = dir==='LONG'
+      ? (pat.hammer||pat.dragonfly||pat.tweezerBottom||pat.vBottom||pat.morningStar)
+      : (pat.shootingStar||pat.gravestone||pat.tweezerTop||pat.vTop||pat.eveningStar);
+    const momentum = dir==='LONG'
+      ? (pat.bullEngulf||pat.marubozuBull||pat.threeSoldiers)
+      : (pat.bearEngulf);
+    const vs=volSpike(k1); const volOK=vs.spike;
+    // continuation confirmation (boosts but not mandatory)
+    const continuation = dir==='LONG' ? (pat.bullFlag||pat.ascTriangle||pat.volBreakout||pat.threeSoldiers) : false;
+
+    // Require the core sequence: sweep + rejection + (momentum OR continuation) + volume
+    const sequenceOK = sweep && rejection && (momentum||continuation) && volOK;
+    const missingParts=[];
+    if(!sweep) missingParts.push('sweep');
+    if(!rejection) missingParts.push('rejection');
+    if(!momentum&&!continuation) missingParts.push('momentum');
+    if(!volOK) missingParts.push(`vol(×${vs.ratio.toFixed(1)})`);
+    if(!sequenceOK){ log('i',`  ↳ ${symbol}: sequence fail — missing: ${missingParts.join(', ')} — skip`); return null; }
+
+    log('i',`  ↳ ${symbol}: sequence ✓ sweep/rejection/momentum/vol — scoring…`);
+
+    // --- SCORING ---
+    const rsi5=calcRSI(closes5,14), rsi1=calcRSI(closes1,14);
+    const vwap5=calcVWAP(k5);
+    const dispOK = dir==='LONG' ? (C(k5[k5.length-1])>O(k5[k5.length-1]) && body(k5[k5.length-1])>atr5)
+                                : (C(k5[k5.length-1])<O(k5[k5.length-1]) && body(k5[k5.length-1])>atr5);
+    const vwapOK = dir==='LONG' ? price>vwap5 : price<vwap5;
+    const atrPct = price>0?atr15/price:0;
+    const oiRaw=0.5; // neutral default; refined by OI feed below
+    let oiScore=oiRaw;
+    try{ const oi=await pubCached(`/v5/market/open-interest?category=linear&symbol=${symbol}&intervalTime=5min&limit=6`,'5');
+      const list=oi.result?.list||[]; if(list.length>=2){ const newest=parseFloat(list[0].openInterest), older=parseFloat(list[list.length-1].openInterest);
+        const rising=newest>older; oiScore=(dir==='LONG')===rising?0.9:0.3; } }catch(e){}
+
+    const raw={
+      zone15: zc.atZone?1:(nearPDH||nearPDL?0.8:0.3),
+      bias15: (bias15==='BULL'&&dir==='LONG')||(bias15==='BEAR'&&dir==='SHORT')?1:0.3,
+      candle15: rejection?0.8:0.2,
+      mss5: momentum?1:(continuation?0.7:0.3),
+      sweep5: sweep?1:0,
+      displacement: dispOK?1:0.3,
+      vwap5: vwapOK?1:0.3,
+      volume: Math.max(0,Math.min(1,(vs.ratio-1)/2)),
+      momentum: dir==='LONG'?(rsi1>50?0.8:0.4):(rsi1<50?0.8:0.4),
+      atr: (atrPct>0.0015&&atrPct<0.04)?1:0.4,
+      btc: Math.max(0,Math.min(1,(Math.abs(corr)-BTC_CORR_MIN)/(1-BTC_CORR_MIN)*0.7+0.3)),
+      oi: oiScore
+    };
+    const score=calcAdaptiveScore(raw);
+    const structural=calcStructuralScore(raw);
+    const grade=deriveGrade(score);
+
+    log('i',`  ↳ ${symbol}: score ${score} (need ${getCfg().scoreThresh}) struct ${structural} grade ${grade}`);
+
+    return { symbol, pair, direction:dir, price, score, structural, grade, raw,
+             bias4h, atr5, atr15, vwap5, zones, zc, atSupport, atResist, corr,
+             patterns:pat, sweep, rejection, momentum:(momentum||continuation), volRatio:vs.ratio };
+  }catch(e){ log('e',`  ↳ analyzeSymbol error (${pair?.symbol}): ${e.message}`); return null; }
+}
+// =====================================================================
+// === END GOVINDA ENTRY LOGIC ========================================
+// =====================================================================
+
+// ---------- SECTION K — UNIVERSE ----------
+async function buildUniverse(){
+  try{
+    const r=await pub('/v5/market/tickers?category=linear');
+    const list=r.result?.list||[];
+    const filtered=list.filter(t=>t.symbol.endsWith('USDT') && !BLACKLIST_SYMBOLS.includes(t.symbol)
+        && parseFloat(t.turnover24h||0)>=UNIVERSE_MIN_VOL && parseFloat(t.openInterestValue||0)>=UNIVERSE_MIN_OI)
+      .sort((a,b)=>parseFloat(b.turnover24h)-parseFloat(a.turnover24h))
+      .slice(0,UNIVERSE_CAP)
+      .map(t=>({symbol:t.symbol, vol:parseFloat(t.turnover24h)}));
+    S.tradableUniverse=filtered;
+    S.universeLastBuilt=Date.now();
+    log('s',`🌐 Universe rebuilt: ${filtered.length} pairs (vol≥$${(UNIVERSE_MIN_VOL/1e6)}M, OI≥$${(UNIVERSE_MIN_OI/1e6)}M)`);
+    renderUniverse();
+  }catch(e){ log('e','Universe build failed: '+e.message); }
+}
+function renderUniverse(){
+  const el=document.getElementById('uniChips');
+  el.innerHTML='';
+  S.tradableUniverse.slice(0,8).forEach(p=>{ const c=document.createElement('div'); c.className='chip'; c.textContent=p.symbol.replace('USDT',''); el.appendChild(c); });
+  if(S.tradableUniverse.length>8){ const c=document.createElement('div'); c.className='chip'; c.textContent='+'+(S.tradableUniverse.length-8); el.appendChild(c); }
+  document.getElementById('statUni').textContent=S.tradableUniverse.length;
+}
+
+// ---------- SECTION L — REGIME / BTC ----------
+async function updateBTC(){
+  try{
+    const k1=await klines('BTCUSDT','1',60);
+    _btcCloses1m=k1.map(C);
+    const k5=await klines('BTCUSDT','5',50);
+    S.btcTrend=tfBias(k5);
+    document.getElementById('mcBtc').textContent=S.btcTrend;
+    // regime from BTC 5M ATR%
+    const atr=calcATR(k5,14), price=C(k5[k5.length-1]); const atrPct=price?atr/price:0;
+    S.regime = atrPct>0.0035?'HOT':atrPct>0.0018?'WARM':'COLD';
+    renderRegime();
+  }catch(e){ /* keep last */ }
+}
+function renderRegime(){
+  const cfg=getCfg();
+  document.getElementById('mcRegime').textContent=cfg.label;
+  document.getElementById('regimeName').textContent=cfg.label;
+  document.getElementById('regimeThresh').textContent='≥'+cfg.scoreThresh;
+  document.getElementById('regimeRisk').textContent=cfg.riskMult.toFixed(2);
+  document.getElementById('regimeCooldown').textContent=(cfg.cooldownMs/1000)+'s';
+}
+
+// ---------- SECTION M — EXEC LOCK ----------
+function acquireExecLock(){ return new Promise(res=>{ if(!_execLocked){ _execLocked=true; res(()=>release()); }
+  else _execQueue.push(()=>{ _execLocked=true; res(()=>release()); }); });
+  function release(){ _execLocked=false; const n=_execQueue.shift(); if(n) n(); } }
+function hardPositionCount(){ return S.openPositions.length + _pendingExecutions.size; }
+function hasOpenSlot(){ return hardPositionCount()<MAX_POSITIONS; }
+function isCoolingDown(sym){ const t=S.coinLastTrade[sym]; return t && (Date.now()-t)<getCfg().cooldownMs; }
+function setCooldown(sym){ S.coinLastTrade[sym]=Date.now(); }
+// Correlation-block: don't stack a 2nd position in the SAME direction when both
+// candidate and an open position are tightly BTC-correlated (effectively one doubled bet).
+function isCorrelationBlocked(result){
+  return S.openPositions.some(p =>
+    p.direction===result.direction &&
+    Math.abs(p.btcCorr||0)>=0.85 &&
+    Math.abs(result.corr||0)>=0.85 );
+}
+
+// ---------- SECTION N — ORDER EXECUTION ----------
+async function openTrade(result){
+  if(!hasOpenSlot()){ return; }
+  if(isCoolingDown(result.symbol)){ return; }
+  if(_inFlightOrders.has(result.symbol)) return;
+  if(S.openPositions.find(p=>p.symbol===result.symbol)) return;
+  if(isCorrelationBlocked(result)){ log('w',`SKIP ${result.symbol}: correlation-block (same-direction high-corr position open)`); return; }
+
+  const release=await acquireExecLock();
+  try{
+    if(!hasOpenSlot()){ log('w',`SKIP ${result.symbol}: cap reached`); return; }
+    _pendingExecutions.add(result.symbol); _inFlightOrders.add(result.symbol);
+
+    // fresh price + structural SL
+    const tick=await pub(`/v5/market/tickers?category=linear&symbol=${result.symbol}`);
+    const entry=parseFloat(tick.result?.list?.[0]?.lastPrice||result.price);
+    const k5=await klines(result.symbol,'5',80), k1h=await klines(result.symbol,'60',30);
+    const sl=calcStructuralSL(k5,k1h,result.direction,entry);
+
+    // pre-trade guards (toggle)
+    const sp=await checkSpread(result.symbol,entry); if(!sp.ok){ log('w',`SKIP ${result.symbol}: spread ${(sp.spreadPct*100).toFixed(3)}%`); return; }
+    const ob=await checkOBDepth(result.symbol); if(!ob.ok){ log('w',`SKIP ${result.symbol}: OB depth`); return; }
+    const fee=checkFeeCoverage(TP_PCT); if(!fee.ok){ log('w',`SKIP ${result.symbol}: fee coverage`); return; }
+
+    const lev=calcLeverage(sl.slPct);
+    const instr=await getInstr(result.symbol);
+
+    // sizing: 60% of free balance × regime riskMult as margin, leveraged
+    const margin=S.balance*RISK_FRACTION*getCfg().riskMult;
+    const notional=margin*lev;
+    let qty=roundStep(notional/entry, instr.qtyStep);
+    if(qty<instr.minQty) qty=instr.minQty;
+    if(qty<=0){ log('w',`SKIP ${result.symbol}: qty 0`); return; }
+
+    const side=result.direction==='LONG'?'Buy':'Sell';
+    const tpPrice=result.direction==='LONG'?entry*(1+TP_PCT):entry*(1-TP_PCT);
+    const tpRounded=roundStep(tpPrice,instr.tickSize);
+    const slRounded=roundStep(sl.slPrice,instr.tickSize);
+    const entryRounded=roundStep(entry,instr.tickSize);
+
+    // set leverage (ignore "leverage not modified" error)
+    try{ await api('POST','/v5/position/set-leverage',{category:'linear',symbol:result.symbol,buyLeverage:String(lev),sellLeverage:String(lev)}); }catch(e){}
+
+    // maker LIMIT entry (PostOnly) at signal price
+    const ord=await api('POST','/v5/order/create',{ category:'linear', symbol:result.symbol, side, orderType:'Limit',
+      qty:String(qty), price:String(entryRounded), timeInForce:'PostOnly', reduceOnly:false });
+    if(ord.retCode!==0){ log('e',`Entry rejected ${result.symbol}: [${ord.retCode}] ${ord.retMsg}`); return; }
+
+    const pos={ symbol:result.symbol, direction:result.direction, side, qty, entryPrice:entryRounded,
+      slPrice:slRounded, tpPrice:tpRounded, slPct:sl.slPct, leverage:lev, grade:result.grade,
+      score:result.score, stage:'PENDING', orderId:ord.result?.orderId||null, tpOrderId:null,
+      tp1Hit:false, openedAt:Date.now(), entryFilled:false, btcCorr:result.corr||0 };
+    S.openPositions.push(pos);
+    _pendingExecutions.delete(result.symbol);   // now counted via openPositions; avoid double-count
+    setCooldown(result.symbol);
+    saveState();
+    log('s',`📝 ENTRY placed: ${result.symbol} ${result.direction} ${lev}x @ ${fp(entryRounded)} | SL ${(sl.slPct*100).toFixed(2)}% TP +1.5% | score ${result.score} ${result.grade}`);
+    playSound('entry'); notify('entry');
+    renderPositions();
+  }catch(e){ log('e','openTrade error: '+e.message); }
+  finally{ _pendingExecutions.delete(result.symbol); _inFlightOrders.delete(result.symbol); release(); }
+}
+
+// ---------- SECTION O — POSITION MONITOR ----------
+async function monitorPositions(){
+  if(!S.running) return;
+  try{
+    const r=await api('GET','/v5/position/list',{category:'linear',settleCoin:'USDT'});
+    if(r.retCode!==0) return;
+    const live=(r.result?.list||[]).filter(p=>parseFloat(p.size)>0);
+    const liveMap={}; live.forEach(p=>liveMap[p.symbol]=p);
+
+    // balance
+    try{ const wb=await api('GET','/v5/account/wallet-balance',{accountType:'UNIFIED'});
+      const eq=wb.result?.list?.[0]?.coin?.find(c=>c.coin==='USDT'); if(eq) S.balance=parseFloat(eq.availableToWithdraw||eq.walletBalance||S.balance);
+    }catch(e){}
+
+    for(const pos of [...S.openPositions]){
+      const lp=liveMap[pos.symbol];
+      if(!pos.entryFilled){
+        if(lp){ // entry filled
+          pos.entryFilled=true; pos.stage='OPEN'; pos.entryPrice=parseFloat(lp.avgPrice)||pos.entryPrice;
+          // set structural SL (market) via trading-stop
+          try{ await api('POST','/v5/position/trading-stop',{category:'linear',symbol:pos.symbol,stopLoss:String(pos.slPrice),slTriggerBy:'LastPrice',positionIdx:0}); }catch(e){}
+          // resting reduceOnly LIMIT TP @ +1.5%
+          try{ const tp=await api('POST','/v5/order/create',{category:'linear',symbol:pos.symbol,
+            side:pos.direction==='LONG'?'Sell':'Buy', orderType:'Limit', qty:String(pos.qty),
+            price:String(pos.tpPrice), timeInForce:'GTC', reduceOnly:true });
+            if(tp.retCode===0){ pos.tpOrderId=tp.result?.orderId||null; log('i',`🎯 Resting LIMIT TP @ ${fp(pos.tpPrice)} for ${pos.symbol}`); }
+            else log('w',`TP not placed ${pos.symbol}: ${tp.retMsg}`);
+          }catch(e){ log('w',`TP error ${pos.symbol}: ${e.message}`); }
+          log('s',`✅ FILLED ${pos.symbol} ${pos.direction} @ ${fp(pos.entryPrice)}`);
+          saveState();
+        } else if(Date.now()-pos.openedAt>180000){ // entry never filled in 3 min → cancel & drop
+          try{ if(pos.orderId) await api('POST','/v5/order/cancel',{category:'linear',symbol:pos.symbol,orderId:pos.orderId}); }catch(e){}
+          S.openPositions=S.openPositions.filter(p=>p!==pos);
+          log('w',`⌛ ${pos.symbol}: entry unfilled 3m — cancelled`);
+          saveState();
+        }
+        continue;
+      }
+      // open: closed externally / TP / SL?
+      if(!lp){
+        await recordClose(pos);
+        S.openPositions=S.openPositions.filter(p=>p!==pos);
+        saveState(); renderPositions();
+      }
+    }
+    renderPositions(); updateStats();
+  }catch(e){ /* transient */ }
+}
+async function recordClose(pos){
+  // Determine the real outcome by querying Bybit's realized closed-PnL for this symbol.
+  let pnl=null, outcome='CLOSE';
+  try{
+    const r=await api('GET','/v5/position/closed-pnl',{category:'linear',symbol:pos.symbol,limit:1});
+    const row=r.result?.list?.[0];
+    if(row && row.closedPnl!=null){ pnl=parseFloat(row.closedPnl); }
+  }catch(e){}
+  if(pnl==null){
+    // Fallback only if the API didn't return realized PnL: infer from whichever target was nearer.
+    pnl = pos.tp1Hit ? Math.abs(pos.qty*pos.entryPrice*TP_PCT) : -Math.abs(pos.qty*pos.entryPrice*pos.slPct);
+  }
+  const win = pnl>=0;
+  outcome = win ? 'TP/WIN' : 'SL/LOSS';
+  win ? S.wins++ : S.losses++;
+  S.sessionPnl+=pnl;
+  S.trades.push({ symbol:pos.symbol, direction:pos.direction, entry:pos.entryPrice, qty:pos.qty,
+    grade:pos.grade, score:pos.score, lev:pos.leverage, pnl, outcome, closedAt:Date.now() });
+  log(win?'s':'w',`📕 ${pos.symbol} closed — ${outcome} ${pnl>=0?'+':''}${pnl.toFixed(3)} USDT`);
+  if(win){ playSound('tp'); notify('tp'); } else { playSound('sl'); notify('sl'); }
+}
+
+// ---------- SECTION P — WATCH QUEUE ----------
+function addToWatch(result){ if(_watchQueue.has(result.symbol)) return;
+  _watchQueue.set(result.symbol,{result,attempts:0,addedAt:Date.now()});
+  log('i',`👁 WATCH ${result.symbol}: structural below min — queued`); }
+async function processWatch(){
+  if(_watchQueue.size===0) return; const now=Date.now();
+  for(const [sym,e] of _watchQueue.entries()){
+    if(now-e.addedAt>WATCH_MAX_AGE_MS){ _watchQueue.delete(sym); continue; }
+    if(S.openPositions.find(p=>p.symbol===sym)||_inFlightOrders.has(sym)){ _watchQueue.delete(sym); continue; }
+    e.attempts++; if(e.attempts>WATCH_MAX_ATTEMPTS){ _watchQueue.delete(sym); continue; }
+    const fresh=await analyzeSymbol(e.result.pair); if(!fresh) continue;
+    if(fresh.structural>=getStructuralMin(fresh.bias4h,fresh.direction) && fresh.score>=getCfg().scoreThresh){
+      _watchQueue.delete(sym);
+      if(hasOpenSlot()&&S.running) await openTrade(fresh);
+    }
+  }
+}
+
+// ---------- SECTION Q — SCAN LOOPS ----------
+async function tier1Scan(){
+  if(!S.running) return;
+  if(Date.now()-S.universeLastBuilt>UNIVERSE_REFRESH_MS||S.tradableUniverse.length===0) await buildUniverse();
+  await updateBTC();
+  // rank focus list by volume (top 24)
+  S.focusPairs=S.tradableUniverse.slice(0,24);
+  log('i',`📡 BTC trend: ${S.btcTrend} | Regime: ${getCfg().label} | Focus list: ${S.focusPairs.length} pairs`);
+}
+async function tier2Scan(){
+  if(!S.running||S.isLooping) return;
+  S.isLooping=true;
+  try{
+    checkDailyReset();
+    document.getElementById('statStatus').textContent='SCANNING';
+    document.getElementById('statScanSub').textContent=S.focusPairs.length+' pairs';
+    document.getElementById('mcEngine').textContent='LIVE';
+    log('i',`━━ Scan cycle — ${S.focusPairs.length} pairs | regime ${getCfg().label} | slots ${MAX_POSITIONS-hardPositionCount()}/${MAX_POSITIONS} open`);
+    let passed=0, skippedCool=0, skippedFull=0;
+    for(const pair of S.focusPairs){
+      if(!S.running) break;
+      if(!hasOpenSlot()){ skippedFull++; break; }
+      if(S.openPositions.find(p=>p.symbol===pair.symbol)) continue;
+      if(isCoolingDown(pair.symbol)){ skippedCool++; log('i',`  ⏳ ${pair.symbol}: cooling down — skip`); continue; }
+      const res=await analyzeSymbol(pair);
+      if(!res) continue;
+      passed++;
+      renderSignal(res);
+      const cfg=getCfg();
+      if(res.score>=cfg.scoreThresh){
+        const structMin=getStructuralMin(res.bias4h,res.direction);
+        if(res.structural>=structMin){
+          if(hasOpenSlot()){ log('s',`🎯 SETUP ${res.symbol} ${res.direction} score ${res.score} struct ${res.structural}/${structMin}`); playSound('setup'); await openTrade(res); }
+        } else { addToWatch(res); }
+      } else {
+        log('i',`  ↳ ${res.symbol}: score ${res.score} below threshold ${cfg.scoreThresh} — no trade`);
+      }
+      await sleep(40);
+    }
+    if(skippedFull) log('i',`  ℹ Position cap reached — remaining pairs skipped`);
+    log('i',`━━ Cycle done — ${passed} passed all filters | ${skippedCool} cooling | next scan in ${(TIER2_INTERVAL_MS/1000).toFixed(0)}s`);
+    await processWatch();
+  }catch(e){ log('e','scan error: '+e.message); }
+  finally{ S.isLooping=false; }
+}
+function checkDailyReset(){
+  const d=new Date().toDateString();
+  if(S.lastResetDay!==d){ S.lastResetDay=d; S.coinLastTrade={}; log('i','🔄 Daily reset'); saveState(); }
+}
+
+// ---------- SECTION R — UI RENDER ----------
+function renderSignal(r){
+  document.getElementById('sigSym').textContent=r.symbol+' · '+r.direction;
+  const g=document.getElementById('sigGrid'); g.innerHTML='';
+  const cells=[
+    ['SWEEP', r.sweep?'YES':'no', r.sweep?'sig-bull':'sig-neut'],
+    ['REJECT', r.rejection?'YES':'no', r.rejection?'sig-bull':'sig-neut'],
+    ['MOMENTUM', r.momentum?'YES':'no', r.momentum?'sig-bull':'sig-neut'],
+    ['VOL ×', r.volRatio.toFixed(1), r.volRatio>=VOL_SPIKE_MULT?'sig-bull':'sig-neut'],
+    ['CORR', Math.abs(r.corr).toFixed(2), Math.abs(r.corr)>=BTC_CORR_MIN?'sig-bull':'sig-bear'],
+    ['LOC', r.zc.atZone?'ZONE':(r.atSupport?'PDL':r.atResist?'PDH':'—'), 'sig-bull'],
+    ['BIAS4H', r.bias4h, r.bias4h==='NEUTRAL'?'sig-neut':'sig-bull'],
+    ['STRUCT', String(r.structural), 'sig-bull']
+  ];
+  cells.forEach(([n,v,c])=>{ const d=document.createElement('div'); d.className='sig-card';
+    d.innerHTML=`<div class="sig-name">${n}</div><div class="sig-val ${c}">${v}</div>`; g.appendChild(d); });
+  document.getElementById('scoreNum').textContent=r.score;
+  document.getElementById('scoreFill').style.width=Math.min(100,r.score)+'%';
+  document.getElementById('scoreGrade').textContent=r.grade;
+}
+function renderPositions(){
+  const el=document.getElementById('positions');
+  if(S.openPositions.length===0){ el.innerHTML='<div style="color:var(--text2);font-size:.7rem;text-align:center;padding:8px">No open positions</div>'; }
+  else{
+    el.innerHTML='';
+    S.openPositions.forEach(p=>{
+      const stageCls=p.entryFilled?'stage-be':'stage-hunt';
+      const div=document.createElement('div'); div.className='pos-item';
+      div.innerHTML=`<div class="pos-head"><div class="pos-sym ${p.direction==='LONG'?'green':'violet'}">${p.symbol} ${p.direction}</div>
+        <div class="pos-stage ${stageCls}">${p.entryFilled?'OPEN':'PENDING'}</div></div>
+        <div class="pos-grid">
+          <div><div class="pc-label">Entry</div><div class="pc-val">${fp(p.entryPrice)}</div></div>
+          <div><div class="pc-label">SL (${(p.slPct*100).toFixed(2)}%)</div><div class="pc-val amber">${fp(p.slPrice)}</div></div>
+          <div><div class="pc-label">TP (1.5%)</div><div class="pc-val green">${fp(p.tpPrice)}</div></div>
+          <div><div class="pc-label">Lev</div><div class="pc-val teal">${p.leverage}x</div></div>
+        </div>
+        <button class="pc-close-btn" onclick="askClose('${p.symbol}')">⛔ CLOSE</button>`;
+      el.appendChild(div);
+    });
+  }
+  const total=hardPositionCount();
+  document.getElementById('statOpen').textContent=`${total}/${MAX_POSITIONS}`;
+  document.getElementById('statSlots').textContent=(MAX_POSITIONS-total)+' remaining';
+}
+function updateStats(){
+  document.getElementById('statBalance').textContent=S.balance?S.balance.toFixed(2):'—';
+  document.getElementById('statPnl').textContent=(S.sessionPnl>=0?'+':'')+S.sessionPnl.toFixed(2);
+  document.getElementById('statPnl').className='stat-value '+(S.sessionPnl>=0?'green':'amber');
+  const pct=S.startBalance?(S.sessionPnl/S.startBalance*100):0;
+  document.getElementById('statPnlPct').textContent=(pct>=0?'+':'')+pct.toFixed(2)+'%';
+  document.getElementById('statTrades').textContent=S.trades.length;
+  document.getElementById('statWR').textContent=`W:${S.wins} L:${S.losses}`;
+}
+
+// ---------- SECTION S — CONTROLS ----------
+async function connectAPI(){
+  S.apiKey=document.getElementById('apiKey').value.trim();
+  S.apiSecret=document.getElementById('apiSecret').value.trim();
+  S.baseUrl=document.getElementById('tgTestnet').checked?URLS.testnet:URLS.mainnet;
+  if(!S.apiKey||!S.apiSecret){ log('e','Enter API key & secret'); return; }
+  log('i','Connecting to '+(S.baseUrl===URLS.testnet?'TESTNET':'MAINNET')+'…');
+  try{
+    const r=await api('GET','/v5/account/wallet-balance',{accountType:'UNIFIED'});
+    if(r.retCode!==0){ log('e','Auth failed: ['+r.retCode+'] '+r.retMsg); return; }
+    const eq=r.result?.list?.[0]?.coin?.find(c=>c.coin==='USDT');
+    S.balance=eq?parseFloat(eq.availableToWithdraw||eq.walletBalance||0):0;
+    S.startBalance=S.balance||1;
+    S.connected=true;
+    document.getElementById('connDot').className='dot on';
+    document.getElementById('connLabel').textContent='CONNECTED';
+    document.getElementById('connectBtn').classList.add('hidden');
+    document.getElementById('startBtn').classList.remove('hidden');
+    document.getElementById('startBtn').disabled=false;
+    log('s',`✅ Connected. Balance ${S.balance.toFixed(2)} USDT`);
+    await buildUniverse(); await updateBTC(); updateStats();
+  }catch(e){ log('e','Connect error: '+e.message+' (check API perms / CORS)'); }
+}
+function readGuards(){ S.guards.spread=document.getElementById('tgSpread').checked;
+  S.guards.ob=document.getElementById('tgOB').checked; S.guards.fee=document.getElementById('tgFee').checked; }
+function startBot(){
+  if(!S.connected) return;
+  readGuards();
+  S.running=true;
+  document.getElementById('startBtn').classList.add('hidden');
+  document.getElementById('stopBtn').classList.remove('hidden');
+  document.getElementById('statStatus').textContent='RUNNING';
+  document.getElementById('mcEngine').textContent='LIVE';
+  log('s','▶ GOVINDA engine started');
+  tier1Scan();
+  S.tier1Timer=setInterval(tier1Scan,TIER1_INTERVAL_MS);
+  S.tier2Timer=setInterval(tier2Scan,TIER2_INTERVAL_MS);
+  S.monitorTimer=setInterval(monitorPositions,4000);
+}
+function stopBot(){
+  S.running=false;
+  clearInterval(S.tier1Timer); clearInterval(S.tier2Timer); clearInterval(S.monitorTimer);
+  document.getElementById('stopBtn').classList.add('hidden');
+  document.getElementById('startBtn').classList.remove('hidden');
+  document.getElementById('statStatus').textContent='STOPPED';
+  document.getElementById('mcEngine').textContent='IDLE';
+  log('w','⏹ Engine stopped (open positions keep running on Bybit)');
+}
+function clearAll(){
+  stopBot();
+  localStorage.removeItem(STATE_KEY);
+  S.trades=[]; S.openPositions=[]; S.wins=0; S.losses=0; S.sessionPnl=0; S.coinLastTrade={};
+  _watchQueue.clear();
+  document.getElementById('console').innerHTML='';
+  renderPositions(); updateStats();
+  log('i','↺ State reset');
+}
+
+// manual close
+function askClose(symbol){ S.modalTargetSymbol=symbol;
+  document.getElementById('modalMsg').textContent='Close '+symbol+' at market?';
+  document.getElementById('modal').classList.remove('hidden'); }
+function cancelClose(){ S.modalTargetSymbol=null; document.getElementById('modal').classList.add('hidden'); }
+async function confirmClose(){
+  const sym=S.modalTargetSymbol; document.getElementById('modal').classList.add('hidden');
+  if(!sym) return; const pos=S.openPositions.find(p=>p.symbol===sym); if(!pos) return;
+  try{
+    if(pos.tpOrderId){ try{ await api('POST','/v5/order/cancel',{category:'linear',symbol:sym,orderId:pos.tpOrderId}); }catch(e){} }
+    await api('POST','/v5/order/create',{category:'linear',symbol:sym,side:pos.direction==='LONG'?'Sell':'Buy',
+      orderType:'Market',qty:String(pos.qty),reduceOnly:true});
+    log('w',`⛔ Manual close sent: ${sym}`);
+  }catch(e){ log('e','Close error: '+e.message); }
+  S.modalTargetSymbol=null;
+}
+
+// ---------- SECTION T — REPORTS ----------
+function downloadReport(type){
+  let rows=S.trades.slice();
+  const now=new Date();
+  if(type==='today'){ const d=now.toDateString(); rows=rows.filter(t=>new Date(t.closedAt).toDateString()===d); }
+  else if(type==='month'){ rows=rows.filter(t=>{ const dt=new Date(t.closedAt); return dt.getMonth()===now.getMonth()&&dt.getFullYear()===now.getFullYear(); }); }
+  else if(type==='last'){ rows=rows.slice(-1); }
+  if(rows.length===0){ log('w','No trades for '+type); return; }
+  const hdr='Time,Symbol,Direction,Entry,Qty,Lev,Grade,Score,Outcome,PnL_USDT';
+  const lines=rows.map(t=>`${new Date(t.closedAt).toISOString()},${t.symbol},${t.direction},${t.entry},${t.qty},${t.lev},${t.grade},${t.score},${t.outcome},${t.pnl.toFixed(4)}`);
+  const csv=[hdr,...lines].join('\n');
+  const blob=new Blob([csv],{type:'text/csv'}); const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download=`GOVINDA_${type}_${Date.now()}.csv`; a.click(); URL.revokeObjectURL(url);
+  log('s',`📄 Report exported: ${type} (${rows.length} trades)`);
+}
+
+// ---------- SECTION U — PERSISTENCE ----------
+function saveState(){
+  try{ localStorage.setItem(STATE_KEY,JSON.stringify({ schema:STATE_SCHEMA, t:Date.now(),
+    trades:S.trades, wins:S.wins, losses:S.losses, sessionPnl:S.sessionPnl,
+    coinLastTrade:S.coinLastTrade, lastResetDay:S.lastResetDay,
+    openPositions:S.openPositions })); }catch(e){}
+}
+function loadState(){
+  try{ const raw=localStorage.getItem(STATE_KEY); if(!raw) return; const d=JSON.parse(raw);
+    if(d.schema!==STATE_SCHEMA) return;
+    if(Date.now()-d.t>48*3600*1000){ localStorage.removeItem(STATE_KEY); log('w','↺ State >48h — cleared'); return; }
+    S.trades=d.trades||[]; S.wins=d.wins||0; S.losses=d.losses||0; S.sessionPnl=d.sessionPnl||0;
+    S.coinLastTrade=d.coinLastTrade||{}; S.lastResetDay=d.lastResetDay||null; S.openPositions=d.openPositions||[];
+  }catch(e){}
+}
+
+// ---------- SECTION V — SOUND / NOTIFY (Web Audio, no embedded files) ----------
+let _ac=null;
+function getAC(){ if(!_ac){ _ac=new (window.AudioContext||window.webkitAudioContext)(); } return _ac; }
+function beep(freq,dur,type='sine',vol=0.12){
+  try{ const ac=getAC(); const o=ac.createOscillator(), g=ac.createGain();
+    o.type=type; o.frequency.value=freq; g.gain.value=vol; o.connect(g); g.connect(ac.destination);
+    const t=ac.currentTime; o.start(t); g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    o.stop(t+dur); }catch(e){}
+}
+const SOUNDS={ entry:()=>{beep(660,0.12);setTimeout(()=>beep(880,0.14),120);},
+  tp:()=>{beep(784,0.12);setTimeout(()=>beep(1047,0.16),120);},
+  sl:()=>{beep(330,0.18,'triangle');setTimeout(()=>beep(247,0.22,'triangle'),150);},
+  setup:()=>beep(560,0.08), test:()=>{beep(440,0.1);setTimeout(()=>beep(660,0.12),110);} };
+function playSound(name){ const f=SOUNDS[name]; if(f) f(); }
+function notify(name){ try{ if('Notification' in window && Notification.permission==='granted' && document.visibilityState!=='visible'){
+  const txt={entry:'⚡ Trade ENTERED',tp:'✅ TP hit',sl:'⛔ Stop hit',setup:'🎯 Setup'}[name]||'GOVINDA';
+  new Notification('GOVINDA',{body:txt}); } }catch(e){} }
+function setSound(state){ const d=document.getElementById('soundDot'),l=document.getElementById('soundLabel');
+  if(state==='on'){ d.className='dot on'; l.textContent='SOUND: ON'; } else if(state==='testing'){ l.textContent='SOUND: …'; } else { d.className='dot'; l.textContent='SOUND: OFF'; } }
+async function testSound(){
+  setSound('testing');
+  try{ const ac=getAC(); if(ac.state==='suspended') await ac.resume();
+    if('Notification' in window && Notification.permission==='default') Notification.requestPermission();
+    playSound('test'); setSound('on'); }catch(e){ setSound('off'); }
+}
+['pointerdown','touchstart','keydown','click'].forEach(ev=>window.addEventListener(ev,()=>{ try{ const ac=getAC(); if(ac.state==='suspended') ac.resume(); }catch(e){} },{passive:true,once:false}));
+
+// ---------- INIT ----------
+(function init(){
+  loadState();
+  renderPositions(); updateStats(); renderRegime();
+  ['tgSpread','tgOB','tgFee'].forEach(id=>document.getElementById(id).addEventListener('change',readGuards));
+  log('i','GOVINDA loaded. Enter API keys and Connect.');
+})();
+</script>
+</body>
+</html>
